@@ -32,7 +32,7 @@ $c.' '.$d จะมีค่าเป็น <?=$c.' '.$d;?>
 $eords คำที่1 คือ <?php echo Substr($words, 0, $space1);?> 
 $eords คำที่2 คือ <?php echo Substr($words, $space1+1, $space2-($space1+1));?> 
 $eords คำที่3 คือ <?php echo Substr($words,$space2+1);?> 
-ตัวอักษรที่สุ่มได้จาก $words คือ " <?php echo $words[rand(0, strlen($words)-1)]?>"
+ตัวอักษรที่สุ่มได้จาก $words คือ " <?php echo $words[rand(0, strlen($words)-1)]?>
 </pre>
 </body>
 </html>
