@@ -1,5 +1,5 @@
 <?php
-require "db_connect.php";
+    require 'db_connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,23 +7,26 @@ require "db_connect.php";
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search product by category</title>
+  <title>Search customers by country</title>
 </head>
 <body>
   <header>
-    <form action="product.php" method="get">
-      <label for="category">
-        <select name="category" id="category">
+    <form action="customer.php" method="get">
+      <label for="country">
+        <select name="country" id="country">
 <?php
-$sql = "select CategoryID, CategoryName from categories";
+$sql = "select CompanyName, ContactName from customers where Country='Germany'";
 $result = $conn->query($sql);
-while ($row = $result->fetch_assoc()){
-    echo "<option value='{$row['CategoryID']}'>{$row['CategoryName']}</option>";
+while($row = $result->fetch_assoc()) {
+  echo 
+        "<td>{$row[' CompanyName']}</td>
+        "<td>{$row['ContactName']}</td>
+     
 }
 $conn->close();
 ?>
           <!-- add options hear ex.
-          <option value="1">Beverages</option>
+          <option>Germany</option>
           -->
         </select>
       </label>
